@@ -17,4 +17,4 @@ Scala batch scripts for snapshotting and restoring WSL (Windows Subsystem for Li
 ```
 java -jar .\amm2.12-2.0.4.jar .\snapshot.sc
 ```
-Note: Depending on how much content you have in WSL, it can take quite some time, and the command does not have an indicator.
+Note: Depending on how much content you have in WSL, it can take quite some time, and the command does not have a progress indicator.
