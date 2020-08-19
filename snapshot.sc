@@ -20,7 +20,7 @@ def main(distro: String = "Debian", pathToSave: String = "C:\\Users\\UserName\\D
 	// Make sure the snapshot tar file exists
 	if(new File(s"$realPathToSave\\$targetFilename").exists)
 	{
-		println(s"Successfully generated: $realPathToSave\$targetFilename")
+		println(s"Successfully generated: $realPathToSave\\$targetFilename")
 		// Now gzip the archive
 		val sevenZExec = new File("C:\\Program Files\\7-Zip\\7z.exe")
 		if(sevenZExec.exists())
