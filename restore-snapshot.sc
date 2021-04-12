@@ -2,11 +2,11 @@ import java.io.File
 import sys.process._
 
 @main
-def main(distro: String = "Debian", pathToRestore: String = "C:\\Users\\UserName\\Documents\\WSLRoot", snapshotPath: String) =
+def main(distro: String = "Debian", pathToRestore: String = "C:\\Users\\UserName\\Documents\\WSLRoot", defaultUser: String = "samik", snapshotPath: String) =
 {
 	val realPathToRestore = if(pathToRestore.contains("UserName")) pathToRestore.replace("UserName", sys.env("USERNAME")) else pathToRestore
 
-	println(s"Restoring snapshot: $distro: $snapshotPath")
+	println(s"Restoring snapshot: [$distro] from [$snapshotPath] to [$realPathToRestore]")
 	// Reference: https://www.howtogeek.com/426562/how-to-export-and-import-your-linux-systems-on-windows-10/
 	// First check if the file is gzipped
 	var tarFileName = snapshotPath
@@ -31,7 +31,7 @@ def main(distro: String = "Debian", pathToRestore: String = "C:\\Users\\UserName
 	println(s"Executing: wsl.exe --import $distro $realPathToRestore $tarFileName")
 	s"wsl.exe --import $distro $realPathToRestore $snapshotPath".!
 	// Next set the default user, otherwise default user is root
-	val defaultUser = "samik"
+	println(s"Setting default user for distro: $defaultUser")
 	println(s"Executing: ${distro.toLowercase}.exe config --default-user $defaultUser")
 	s"${distro.toLowercase}.exe config --default-user $defaultUser".!
 	println("Snapshot restoration complete.")
