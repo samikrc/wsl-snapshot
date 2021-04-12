@@ -35,14 +35,15 @@ Notes:
 * Navigate to the git folder: `wsl-snapshot`
 * Run the program to take snapshot.
 ```$xslt
-java -jar .\<ammonite jar> .\restore-snapshot.sc <Distro name> <path\\to\\restore> <path\\to\\snapshot\\gzip>  
+java -jar .\<ammonite jar> .\restore-snapshot.sc <Distro name> <path\\to\\restore> <default user> <path\\to\\snapshot\\gzip>  
 ```
 The distro name can be obtained from running:
 ```$xslt
 wsl.exe -l
 ```
-Currently the default values for the first two parameters are:
+Currently the default values for the first three parameters are:
 ```$xslt
 distro = Debian
 pathToRestore = C:\\Users\\<UserName>\\Documents\\WSLRoot
+default user = <UserName>
 ``` 
