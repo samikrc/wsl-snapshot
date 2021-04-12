@@ -4,7 +4,7 @@ import sys.process._
 import java.util.Date
 
 /**
- Usage: java -jar .\amm2.12-2.0.4.jar .\snapshot.sc
+ Usage: java -jar .\ammX.X.X.jar .\snapshot.sc
 */
 @main
 def main(distro: String = "Debian", pathToSave: String = "C:\\Users\\UserName\\Documents\\WSLBackups") =
