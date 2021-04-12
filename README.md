@@ -33,7 +33,7 @@ Note: Depending on how much content you have in WSL, it can take quite some time
 * Navigate to the git folder: `wsl-snapshot`
 * Run the program to take snapshot.
 ```$xslt
-java -jar .\amm2.12-2.0.4.jar .\restore-snapshot.sc <Distro name> <path\\to\\restore> <path\\to\\snapshot\\gzip>  
+java -jar .\<ammonite jar> .\restore-snapshot.sc <Distro name> <path\\to\\restore> <path\\to\\snapshot\\gzip>  
 ```
 The distro name can be obtained from running:
 ```$xslt
