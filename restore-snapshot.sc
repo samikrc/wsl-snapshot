@@ -2,7 +2,7 @@ import java.io.File
 import sys.process._
 
 @main
-def main(distro: String = "Debian", pathToRestore: String = "C:\\Users\\UserName\\Documents\\WSLRoot", defaultUser: String = "samik", snapshotPath: String) =
+def main(distro: String = "Debian", pathToRestore: String = "C:\\Users\\UserName\\Documents\\WSLRoot", defaultUser: String, snapshotPath: String) =
 {
 	val realPathToRestore = if(pathToRestore.contains("UserName")) pathToRestore.replace("UserName", sys.env("USERNAME")) else pathToRestore
 
