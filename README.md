@@ -33,6 +33,7 @@ Notes:
 # Restoring snapshot
 * Open powershell (Admin mode is not required)
 * Navigate to the git folder: `wsl-snapshot`
+  * If your git folders are on wsl, and you have not snapshot or restored an earlier snapshot before, it is likely that to navigate to the git folder `wsl-snapshot`, you need to know where Windows 10 stores your Linux distro files. Follow this link for this purpose: [https://www.howtogeek.com/261383/how-to-access-your-ubuntu-bash-files-in-windows-and-your-windows-system-drive-in-bash/]. For example, my Debian files were located at `C:\Users\<username>\AppData\Local\Packages\TheDebianProject.DebianGNULinux_76v4gfsz19hv4`
 * Run the program to take snapshot.
 ```$xslt
 java -jar .\<ammonite jar> .\restore-snapshot.sc <Distro name> <path\\to\\restore> <path\\to\\snapshot\\gzip>  
