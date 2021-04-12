@@ -15,7 +15,7 @@ Scala batch scripts for snapshotting and restoring WSL (Windows Subsystem for Li
 * Navigate to the git folder: `wsl-snapshot`
 * Run the program to take snapshot.
 ```
-java -jar .\<ammonite jar> .\snapshot.sc <Distro Name> <path\\to\\save
+java -jar .\<ammonite jar> .\snapshot.sc <Distro Name> <path\\to\\save>
 ```
 The distro name can be obtained from running:
 ```$xslt
@@ -26,7 +26,9 @@ Currently the default values for these two parameters are:
 distro = Debian
 pathToSave = C:\\Users\\<UserName>\\Documents\\WSLBackups
 ``` 
-Note: Depending on how much content you have in WSL, it can take quite some time, and the command does not have a progress indicator.
+Notes: 
+- Depending on how much content you have in WSL, it can take quite some time, and the command does not have a progress indicator.
+- If 7-Zip is available, the snapshot file would be gzipped automatically.
 
 # Restoring snapshot
 * Open powershell (Admin mode is not required)
