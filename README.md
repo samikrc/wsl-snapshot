@@ -4,7 +4,7 @@ Scala batch scripts for snapshotting and restoring WSL (Windows Subsystem for Li
 # Setup
 * Install JDK (we recommend OpenJDK from [AdoptOpenJDK](https://adoptopenjdk.net/)), v8u252 or above.
 * Install [7-Zip](https://www.7-zip.org/). Should be available in C:\\Program Files\\7-Zip.
-* Exit all WSL terminals, and possibly all programs launched from WSL terminal (e.g., VSCode, IntelliJ etc)
+* Exit all WSL terminals, and all programs launched from WSL terminal (e.g., VSCode, IntelliJ etc)
 * Save the "code" of this repository using the "Code" button, and downloading the zip file. Extract the contents of the zip file to somewhere on Windows (e.g., Desktop, or Downloads etc).
 * Inside the folder, download the latest ammonite executable (currently 2.12-2.3.8) from [https://github.com/lihaoyi/Ammonite/releases] and save it as `amm2.12-2.3.8.jar
 * In order to save the snapshots, set up a folder. I prefer creating a folder called `WSLBackups` at `C:\Users\<username>\Documents\WSLBackups`
@@ -41,9 +41,9 @@ The distro name can be obtained from running:
 ```$xslt
 wsl.exe -l
 ```
-Currently the default values for the first three parameters are:
+Currently the default values for the first two parameters are:
 ```$xslt
 distro = Debian
 pathToRestore = C:\\Users\\<UserName>\\Documents\\WSLRoot
-default user = <UserName>
 ``` 
+Set the default user to the same username that was before in WSL, otherwise the home folder might be different.
