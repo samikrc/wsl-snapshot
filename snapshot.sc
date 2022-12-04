@@ -28,8 +28,15 @@ def main(distro: String = "Debian", pathToSave: String = "C:\\Users\\UserName\\D
 			println(s"Creating gzip archive from ${targetFilename}...")
 			val archiveCmd = s"$sevenZExec a -tgzip ${targetFilename}.gz $realPathToSave\\$targetFilename"
 			println(s"Executing: $archiveCmd")
-			archiveCmd.!
-			println(s"Snapshot complete! Output file: [$realPathToSave\\${targetFilename}.gz]")
+			try
+			{
+				archiveCmd.!
+				println(s"Snapshot complete! Output file: [$realPathToSave\\${targetFilename}.gz]")
+			}
+			catch
+			{
+				case e: Exception => println(s"Could not create archive. Error: ${e.message}")
+			}			
 		}
 		else println(s"Error: Couldn't locate 7z at [$sevenZExec]!")
 	}
