@@ -26,12 +26,13 @@ def main(distro: String = "Debian", pathToSave: String = "C:\\Users\\UserName\\D
 		if(sevenZExec.exists())
 		{
 			println(s"Creating gzip archive from ${targetFilename}...")
-			val archiveCmd = s"$sevenZExec a -tgzip ${targetFilename}.gz $realPathToSave\\$targetFilename"
+			val output = s"${realPathToSave}\\${targetFilename}.gz"
+			val archiveCmd = s"$sevenZExec a -tgzip $output $realPathToSave\\$targetFilename"
 			println(s"Executing: $archiveCmd")
 			try
 			{
 				archiveCmd.!
-				println(s"Snapshot complete! Output file: [$realPathToSave\\${targetFilename}.gz]")
+				println(s"Snapshot complete! Output file: [$output]")
 			}
 			catch
 			{
