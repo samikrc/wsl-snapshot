@@ -36,7 +36,7 @@ def main(distro: String = "Debian", pathToSave: String = "C:\\Users\\UserName\\D
 			}
 			catch
 			{
-				case e: Exception => println(s"Could not create archive. Error: ${e.message}")
+				case e: Exception => println(s"Could not create archive. Error: ${e.getMessage}")
 			}			
 		}
 		else println(s"Error: Couldn't locate 7z at [$sevenZExec]!")
