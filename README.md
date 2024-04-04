@@ -2,7 +2,7 @@
 Scala batch scripts for snapshotting and restoring WSL (Windows Subsystem for Linux). Meant to be run with ammonite (https://github.com/lihaoyi/Ammonite/releases).
 
 # Setup
-* Install JDK (we recommend OpenJDK from [AdoptOpenJDK](https://adoptopenjdk.net/)), v8u252 or above.
+* Install JDK (we recommend OpenJDK from [Adoptium](https://adoptium.net/)), v8u252 or above.
 * Install [7-Zip](https://www.7-zip.org/). Should be available in C:\\Program Files\\7-Zip.
 * Exit all WSL terminals, and all programs launched from WSL terminal (e.g., VSCode, IntelliJ etc)
 * Save the "code" of this repository using the "Code" button, and downloading the zip file. Extract the contents of the zip file to somewhere on Windows (e.g., Desktop, or Downloads etc).
