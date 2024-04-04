@@ -14,20 +14,20 @@ def main(distro: String = "Debian", pathToSave: String = "C:\\Users\\UserName\\D
 	println(s"Generating snapshot for distro: $distro, at: $realPathToSave")
 	// Reference: https://www.howtogeek.com/426562/how-to-export-and-import-your-linux-systems-on-windows-10/
 	val targetFilename = s"$distro-${(new Date).toInstant.toString.replace(":","-").split('.')(0)}.tar"
-	val command = s"wsl.exe --export $distro $realPathToSave\\$targetFilename"
+	val command = s"wsl.exe --export $distro \"$realPathToSave\\$targetFilename\""
 	println(s"Executing: $command")
 	command.!
 	// Make sure the snapshot tar file exists
 	if(new File(s"$realPathToSave\\$targetFilename").exists)
 	{
-		println(s"Successfully generated: $realPathToSave\\$targetFilename")
+		println(s"Successfully generated: \"$realPathToSave\\$targetFilename\"")
 		// Now gzip the archive
 		val sevenZExec = new File("C:\\Program Files\\7-Zip\\7z.exe")
 		if(sevenZExec.exists())
 		{
 			println(s"Creating gzip archive from ${targetFilename}...")
 			val output = s"${realPathToSave}\\${targetFilename}.gz"
-			val archiveCmd = s"$sevenZExec a -tgzip $output $realPathToSave\\$targetFilename"
+			val archiveCmd = s"$sevenZExec a -tgzip \"$output\" \"$realPathToSave\\$targetFilename\""
 			println(s"Executing: $archiveCmd")
 			try
 			{
