@@ -10,17 +10,17 @@ def main(distro: String = "Debian", pathToRestore: String = "C:\\Users\\UserName
 	// Reference: https://www.howtogeek.com/426562/how-to-export-and-import-your-linux-systems-on-windows-10/
 	// First check if the file is gzipped
 	var tarFileName = snapshotPath
-	if(snapshotPath.endsWith(".gz"))
+	if(snapshotPath.endsWith(".7z"))
 	{
 		// We need to uncompress the file
 		val sevenZExec = new File("C:\\Program Files\\7-Zip\\7z.exe")
 		if(sevenZExec.exists())
 		{
-			val archiveCmd = s"$sevenZExec e .\\$snapshotPath"
+			val archiveCmd = s"$sevenZExec e \".\\$snapshotPath\""
 			println(s"Uncompressing: $snapshotPath")
 			archiveCmd.!
 			// Set the tar filename
-			tarFileName = snapshotPath.stripSuffix(".gz")
+			tarFileName = snapshotPath.stripSuffix(".7z")
 		}
 		else println(s"Couldn't locate 7z at [$sevenZExec]!")
 	}
