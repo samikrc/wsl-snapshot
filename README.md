@@ -6,7 +6,7 @@ Scala batch scripts for snapshotting and restoring WSL (Windows Subsystem for Li
 * Install [7-Zip](https://www.7-zip.org/). Should be available in C:\\Program Files\\7-Zip.
 * Exit all WSL terminals, and all programs launched from WSL terminal (e.g., VSCode, IntelliJ etc)
 * Save the "code" of this repository using the "Code" button, and downloading the zip file. Extract the contents of the zip file to somewhere on Windows (e.g., Desktop, or Downloads etc).
-* Inside the folder, download the latest ammonite executable (currently 2.13-3.0.0-M1) from [https://github.com/lihaoyi/Ammonite/releases] and save it as `amm2.13-3.0.0-M1.jar
+* Inside the folder, download the latest ammonite executable (currently 2.13-3.0.0-M1) from [https://github.com/lihaoyi/Ammonite/releases] and save it as `amm2.13-3.0.0-M1.jar`
   * Scala 3.X versions should also work - I have not tried.
 * In order to save the snapshots, set up a folder. I prefer creating a folder called `WSLBackups` at `C:\Users\<username>\Documents\WSLBackups`
 
