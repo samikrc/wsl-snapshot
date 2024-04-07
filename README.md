@@ -5,6 +5,7 @@ Scala batch scripts for snapshotting and restoring WSL (Windows Subsystem for Li
 * Install JDK (we recommend OpenJDK from [Adoptium](https://adoptium.net/)), v8u252 or above. I have tried with JDK17 and things work just fine!
 * Install [7-Zip](https://www.7-zip.org/). Should be available in C:\\Program Files\\7-Zip.
 * Exit all WSL terminals, and all programs launched from WSL terminal (e.g., VSCode, IntelliJ etc)
+  * Use `wsl -l -v` in Powershell, and then `wsl --terminate <distro name>`
 * Save the "code" of this repository using the "Code" button, and downloading the zip file. Extract the contents of the zip file to somewhere on Windows (e.g., Desktop, or Downloads etc).
 * Inside the folder, download the latest ammonite executable (currently 2.13-3.0.0-M1) from [https://github.com/lihaoyi/Ammonite/releases] and save it as `amm2.13-3.0.0-M1.jar`
   * Scala 3.X versions should also work - I have not tried.
@@ -12,7 +13,7 @@ Scala batch scripts for snapshotting and restoring WSL (Windows Subsystem for Li
 
 # Taking snapshot
 * Open powershell (Admin mode is not required)
-* Navigate to the git folder: `wsl-snapshot`
+* Navigate to the source folder: `wsl-snapshot-master` (assuming you have downloaded, saved and extracted the code of the repo).
   * If your git folders are on wsl, and you have not snapshot or restored an earlier snapshot before, it is likely that to navigate to the git folder `wsl-snapshot`, you need to know where Windows 10 stores your Linux distro files. Follow this link for this purpose: [https://www.howtogeek.com/261383/how-to-access-your-ubuntu-bash-files-in-windows-and-your-windows-system-drive-in-bash/]. For example, my Debian files were located at `C:\Users\<username>\AppData\Local\Packages\TheDebianProject.DebianGNULinux_76v4gfsz19hv4`
 * Run the program to take snapshot.
 ```
