@@ -14,7 +14,6 @@ Scala batch scripts for snapshotting and restoring WSL (Windows Subsystem for Li
 # Taking snapshot
 * Open powershell (Admin mode is not required)
 * Navigate to the source folder: `wsl-snapshot-master` (assuming you have downloaded, saved and extracted the code of the repo).
-  * If your git folders are on wsl, and you have not snapshot or restored an earlier snapshot before, it is likely that to navigate to the git folder `wsl-snapshot`, you need to know where Windows 10 stores your Linux distro files. Follow this link for this purpose: [https://www.howtogeek.com/261383/how-to-access-your-ubuntu-bash-files-in-windows-and-your-windows-system-drive-in-bash/]. For example, my Debian files were located at `C:\Users\<username>\AppData\Local\Packages\TheDebianProject.DebianGNULinux_76v4gfsz19hv4`
 * Run the program to take snapshot.
 ```
 java -jar .\<ammonite jar> .\snapshot.sc <Distro Name> <path\\to\\save>
@@ -30,14 +29,14 @@ pathToSave = C:\\Users\\<UserName>\\Documents\\WSLBackups
 ``` 
 Notes: 
 - Depending on how much content you have in WSL, it can take quite some time, and the command does not have a progress indicator.
-- If 7-Zip is available, the snapshot file would be gzipped automatically.
+- If 7-Zip is available, the snapshot file would be compressed automatically using the 7z format. This format was chosen since 7z can use parallelization to compress the large file.
 
 # Restoring snapshot
 * Open powershell (Admin mode is not required)
 * Navigate to the git folder: `wsl-snapshot`
 * Run the program to take snapshot.
 ```$xslt
-java -jar .\<ammonite jar> .\restore-snapshot.sc <Distro name> <path\\to\\restore> <default user> <path\\to\\snapshot\\gzip>  
+java -jar .\<ammonite jar> .\restore-snapshot.sc <Distro name> <path\\to\\restore> <default user> <path\\to\\snapshot\\7z\\file>  
 ```
 The distro name can be obtained from running:
 ```$xslt
