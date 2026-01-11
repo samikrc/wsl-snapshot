@@ -12,7 +12,9 @@ def main(distro: String = "Debian", pathToSave: String = "C:\\Users\\UserName\\D
 	val realPathToSave = if(pathToSave.contains("UserName")) pathToSave.replace("UserName", sys.env("USERNAME")) else pathToSave
 
 	println(s"Generating snapshot for distro: $distro, at: $realPathToSave")
-	// Reference: https://www.howtogeek.com/426562/how-to-export-and-import-your-linux-systems-on-windows-10/
+	// Reference: 
+	// (1) https://www.howtogeek.com/426562/how-to-export-and-import-your-linux-systems-on-windows-10/
+	// (2) https://learn.microsoft.com/en-us/windows/wsl/basic-commands#export-a-distribution
 	val targetFilename = s"$distro-${(new Date).toInstant.toString.replace(":","-").split('.')(0)}.tar"
 	val command = s"wsl.exe --export $distro \"$realPathToSave\\$targetFilename\""
 	println(s"Executing: $command")
